@@ -8,8 +8,13 @@
         margin: 0;
         padding: 10px;
       }
-      #horizon{
+      #horizon_bottom{
         transform: translate(0, 1000%);
+      }
+      #horizon_left{
+        border-right: solid;
+        padding-right: 10px;
+        padding-bottom: 255px;
       }
       body{
         margin: 0;
@@ -37,8 +42,9 @@
       </span>
     </h1>
     <input type="button" name="" value="Game Start" onclick="auto()">
+    <span id="horizon_left"></span>
     <img src="https://balloness.github.io/balloon/ball.png" id="ball">
-    <h1 id="horizon"></h1>
+    <h1 id="horizon_bottom"></h1>
     <script type="text/javascript">
       var ball = document.getElementById("ball");
       var step = 80;
@@ -52,6 +58,11 @@
         top_step += ball_top_speed;
         ball.style.left = step + "px";
         ball.style.top = top_step + "px";
+        if(step > 760)
+        {
+          ball_speed = 0;
+          ball_top_speed = 0;
+        }
         if(top_step > 190 || top_step < -60) ball_top_speed *= -1;
       }
       function auto()
