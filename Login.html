@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1{
+        text-align: center;
+        border-bottom: solid;
+        padding: 10px;
+        margin: 0;
+      }
+      div{
+        font-size: 30px;
+      }
+    </style>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>login</h1>
+    <div class="">
+      name: <input type="text" id="name" name="" value="">
+      <input type="button" name="" value="Decision" onclick="name_decision()">
+    </div>
+    <script type="text/javascript">
+      function name_decision()
+      {
+        name = document.getElementById("name").value;
+        if(name.length > 0)
+        {
+          location.href = "https://balloness.github.io/balloon/Home.html"
+        }
+        else
+        {
+          alert('please enter your name')
+        }
+      }
+    </script>
+  </body>
+</html>
